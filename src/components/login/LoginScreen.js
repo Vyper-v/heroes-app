@@ -13,7 +13,7 @@ export const LoginScreen = () => {
       <h1>Login Screen</h1>
       <button
         onClick={handleLogin}
-        className="button border-emerald-300 text-emerald-300"
+        className="button border-emerald-300 text-emerald-300 active:bg-emerald-300 active:text-white"
       >
         Log in
       </button>

@@ -3,7 +3,34 @@
 @tailwind components;
 @layer components {
   .button {
-    @apply rounded border-2 font-bold px-2 py-1;
+    @apply rounded-md border font-semibold px-3 py-2 text-sm shadow-sm border-slate-300;
+  }
+  .input {
+    @apply block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400;
+  }
+  .input:invalid {
+    @apply invalid:border-pink-500 invalid:text-pink-600;
+  }
+  .input:disabled {
+    @apply bg-slate-50 text-slate-500 border-slate-200 shadow-none;
+  }
+  .input:focus {
+    @apply outline-none border-gray-500 ring-1 ring-gray-500;
+  }
+  .input:focus:invalid {
+    @apply border-pink-500 ring-pink-500;
   }
 }
 @tailwind utilities;
+@layer utilities {
+  .grid-fill {
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  }
+
+  .grid-fit {
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  }
+  .inherit-all {
+    all: inherit;
+  }
+}

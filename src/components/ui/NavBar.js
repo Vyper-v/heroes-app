@@ -8,16 +8,16 @@ export const Navbar = () => {
   };
 
   return (
-    <nav className="flex flex-wrap shadow-inner overflow-hidden items-center gap-8 p-2 bg-neutral-100">
-      <Link className="text-2xl font-bold text-indigo-500" to="/">
-        Asociaciones
+    <nav className="flex flex-wrap shadow-inner overflow-hidden items-baseline gap-8 py-5 px-6 bg-neutral-100">
+      <Link className="text-2xl font-bold text-neutral-500" to="/">
+        Heroes
       </Link>
 
-      <div className="flex flex-1 justify-between">
-        <div className="flex gap-4 text-neutral-400">
+      <div className="flex flex-1 justify-between items-center">
+        <div className="flex gap-8 text-neutral-400">
           <NavLink
             className={({ isActive }) =>
-              (isActive && "text-indigo-400 font-bold") || ""
+              (isActive && "text-neutral-400 font-bold") || ""
             }
             to="/marvel"
           >
@@ -25,14 +25,25 @@ export const Navbar = () => {
           </NavLink>
           <NavLink
             className={({ isActive }) =>
-              (isActive && "text-indigo-400 font-bold") || ""
+              (isActive && "text-neutral-400 font-bold") || ""
             }
             to="/dc"
           >
             DC
           </NavLink>
+          <NavLink
+            className={({ isActive }) =>
+              (isActive && "text-neutral-400 font-bold") || ""
+            }
+            to="/search"
+          >
+            🔍
+          </NavLink>
         </div>
-        <button onClick={handleLogout} className="text-red-600">
+        <button
+          onClick={handleLogout}
+          className="button border-red-600 text-red-600 active:bg-red-600 active:text-white"
+        >
           Logout
         </button>
       </div>

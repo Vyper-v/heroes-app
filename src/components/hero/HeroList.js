@@ -1,15 +1,14 @@
+import { useMemo } from "react";
 import { getHeroesByPublisher } from "../../selectors/getHeroesByPublisher";
-import { Hero } from "./Hero";
+import { HeroCard } from "./HeroCard";
 
 export const HeroList = ({ publisher = "Marvel Comics" }) => {
-
-  const heroes = getHeroesByPublisher(publisher);
-
+  const heroes = useMemo(() => getHeroesByPublisher(publisher), [publisher]);
   return (
-    <ul>
+    <div className="grid grid-fill gap-2 p-1">
       {heroes.map((hero) => (
-        <li key={hero.id}>{hero.superhero}</li>
+        <HeroCard key={hero.id} {...hero}></HeroCard>
       ))}
-    </ul>
+    </div>
   );
 };
